@@ -1,0 +1,28 @@
+
+.mainHeading{
+    text-align: center;
+    font-size: 4rem;
+}
+.signupform{
+text-align: center;
+margin-top: 5px;
+}
+.signupform div{
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+.signupform div label{
+    font-size: 20px;
+}
+.signupform div input{
+    font-size: 15px;
+    text-align: center;
+}
+.signupform div texarea{
+    font-size: 15px;
+}
+.signupform button{
+    font-size: 25px;
+    border-radius: 25px;
+    cursor: pointer;
+}

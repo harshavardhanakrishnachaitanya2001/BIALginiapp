@@ -1,8 +1,9 @@
 import {useState} from 'react'
+import styles from '../styles/Signup.module.css'
 export default function SignUpSignIn(){
   return <>
-    <h1 className='text-center'>BIAL</h1>
-    <form>
+    <h1 className={styles.mainHeading}>Bangulure International Airport Limited</h1>
+    <form className={styles.signupform}>
       <div>
         <label htmlFor='username'>Username: </label>
         <input type="text" autoComplete='off' name="username"/>
@@ -17,7 +18,7 @@ export default function SignUpSignIn(){
       </div>
       <div>
         <label htmlFor='address'>Address: </label>
-        <input type="text" autoComplete='off' name="address"/>
+        <textarea autoComplete="off" name="address"/>
       </div>
       <div>
         <label htmlFor='password'>Password: </label>
