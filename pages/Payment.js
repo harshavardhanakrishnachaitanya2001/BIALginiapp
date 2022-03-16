@@ -23,6 +23,8 @@ export default function Payment(){
                 <label>Save card details</label>
                 <input type="checkbox" checked="true"/>
             </div>
+            <button type="submit">Pay</button>
         </form>
+        <button type="button">Mail the ticket</button>
     </>
 }
