@@ -25,6 +25,6 @@ export default function Payment(){
             </div>
             <button type="submit">Pay</button>
         </form>
-        <button type="button">Mail the ticket</button>
+        <button type="button">Mail my ticket</button>
     </>
 }
