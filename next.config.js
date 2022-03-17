@@ -3,4 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-module.exports = nextConfig
+module.exports = {
+  nextConfig,
+  env:{
+    mongodburl:'mongodb+srv://harshavardhanakrishnachaitanya:harshaharsha@cluster0.spccm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+  }
+}

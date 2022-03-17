@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import styles from '../styles/Signup.module.css'
 export default function SignUpSignIn(){
-  const [signupDetails,setSignupDetails] = useState({});
+  const [signupDetails,setSignupDetails] = useState([{}]);
   const [username,setUsername] = useState('');
   const [phone,setPhone] = useState();
   const [email,setEmail] = useState('');
@@ -22,9 +22,18 @@ export default function SignUpSignIn(){
   const handleAddress = (e) => {
     setAddress(e.target.value)
   }
-  const handleSubmit = (e) => {
+  async function handleSubmit(e){
     e.preventDefault();
-    setSignupDetails({'username':username,'phone':phone, 'email':email, 'address':address, 'password':password})
+    setSignupDetails([{'username':username,'phone':phone, 'email':email, 'address':address, 'password':password}]);
+    const response = await fetch("/api/user",{
+      method:'POST',
+      body:JSON.stringify(signupDetails),
+      headers:{
+        "Content-Type":"application/json",
+      },
+    });
+    const data = await response.json();
+    console.log(data);
   }
   return <>
     <h1 className={styles.mainHeading}>Bangulure International Airport Limited</h1>
@@ -51,7 +60,7 @@ export default function SignUpSignIn(){
       </div>
       <button type="submit" onClick = {handleSubmit}>Register</button>
     </form>
-    <p>{signupDetails.username} {signupDetails.phone} {signupDetails.email} {signupDetails.address} {signupDetails.password}</p>
+    {/* <p>{signupDetails.username} {signupDetails.phone} {signupDetails.email} {signupDetails.address} {signupDetails.password}</p> */}
     
   </>
 }

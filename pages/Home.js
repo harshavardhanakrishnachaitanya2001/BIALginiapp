@@ -13,11 +13,11 @@ export default function Home(){
         <div className={styles.tableContainer}>
             <table className={styles.availableFlights}>
                 <tr>
-                    <td>Available flights</td>
-                    <td>Timings</td>
-                    <td>Bording pt.</td>
-                    <td>Available seats</td>
-                    <td>Book?</td>
+                    <th>Available flights</th>
+                    <th>Timings</th>
+                    <th>Bording pt.</th>
+                    <th>Available seats</th>
+                    <th>Book?</th>
                 </tr>
             </table>
         </div>
