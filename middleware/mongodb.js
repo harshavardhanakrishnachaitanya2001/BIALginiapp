@@ -10,7 +10,7 @@ const connectDB = handler => async (req, res) => {
     useUnifiedTopology: true,
     useFindAndModify: false,
     useCreateIndex: true,
-    useNewUrlParser: true
+    useNewUrlParser: true,
   });
   return handler(req, res);
 };
