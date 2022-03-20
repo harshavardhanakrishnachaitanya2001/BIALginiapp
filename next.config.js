@@ -1,13 +1,5 @@
-const { PHASE_DEVELOPMENT_SERVER } = require('next/constants')
-
-module.exports = (phase, { defaultConfig }) => {
-  if (phase === PHASE_DEVELOPMENT_SERVER) {
-    return {
-      /* development only config options here */
+module.exports={
+    env:{
+        mongodburl:'mongodb+srv://harshavardhanakrishnachaitanya:harsha786@cluster0.spccm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
     }
-  }
-
-  return {
-    /* config options for all phases except development here */
-  }
 }
