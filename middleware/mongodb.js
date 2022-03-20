@@ -8,11 +8,10 @@ const connectDB = handler => async (req, res) => {
   // Use new db connection
   await mongoose.connect(process.env.mongodburl, {
     useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
-    useNewUrlParser: true,
+    useNewUrlParser: true
   });
   return handler(req, res);
 };
 
 export default connectDB;
+

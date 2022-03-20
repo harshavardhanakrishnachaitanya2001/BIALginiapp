@@ -2,26 +2,25 @@ import mongoose from 'mongoose';
 var Schema = mongoose.Schema;
 
 var user = new Schema({
-  username: {
+  name: {
     type: String,
     required: true
   },
-  phone: {
-      type:String,
-      required:true
+  phone:{
+    type:Number,
+    required:true
   },
   email: {
     type: String,
     required: true
   },
+  address:{
+      type:String,
+  },
   password: {
     type: String,
     required: true
   },
-  since: {
-    type: Date,
-    default: Date.now
-  }
 });
 
 mongoose.models = {};
