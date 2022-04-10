@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import styles from '../styles/Signup.module.css'
 export default function SignUpSignIn(){
   const [username,setUsername] = useState("");
@@ -29,25 +29,15 @@ export default function SignUpSignIn(){
   // }
   const handleClick = async (event) => {
     event.preventDefault();
-    const signupDetails = {
-            method:"POST",
-            body:JSON.stringify({
-                username: username,
-                phone: phone,
-                email: email,
-                password: password
-            }),
-            headers:{
-                "Content-Type":"application/json"
-            },
-        }
-    fetch('http://0.0.0.0:3000/api/user',signupDetails)
-        .then(res => {
-            console.log(res)
-            return res.json()
-        })
-        .then(response => console.log(`response`,response))
-        .catch(error => console.log(`error`,error))
+    useEffect(()=>{
+      fetch('/api/user',{
+        method:'POST',
+        headers:{
+          'Content-Type':'application/json'
+        },
+        body:JSON.stringify({})
+      })
+    })
 }
   return <>
     <h1 className={styles.mainHeading}>Bangulure International Airport Limited</h1>
