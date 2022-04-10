@@ -1,8 +1,8 @@
 import connectDB from '../../middleware/mongodb';
 import bcrypt from 'bcrypt';
 import User from '../../models/user';
-
-const handler = async (req, res) => {
+connectDB();
+export default async (req, res) => {
   if (req.method === 'POST') {
     // Check if name, email or password is provided
     const { username, phone, email, password } = req.body;
@@ -11,9 +11,9 @@ const handler = async (req, res) => {
           // Hash password to store it in DB
           var passwordhash = await bcrypt.sign(password);
           var user = new User({
-            username,
-            phone,
-            email,
+            username: username,
+            phone: phone,
+            email: email,
             password: passwordhash,
           });
           // Create new user
@@ -30,4 +30,3 @@ const handler = async (req, res) => {
   }
 };
 
-export default connectDB(handler);
