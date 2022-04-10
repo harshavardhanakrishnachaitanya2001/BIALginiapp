@@ -4,7 +4,6 @@ export default function SignUpSignIn(){
   const [username,setUsername] = useState("");
   const [phone,setPhone] = useState("");
   const [email,setEmail] = useState("");
-  const [address,setAddress] = useState("");
   const [password,setPassword] = useState("");
   const handleUsername = (e) => {
     setUsername(e.target.value)
