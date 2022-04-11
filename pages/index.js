@@ -23,21 +23,27 @@ export default function SignUpSignIn(){
   //     "username":username,
   //     "phone":phone,
   //     "email":email,
-  //     "address":address,
   //     "password":password
   //   }
   // }
+  useEffect(()=>{
+    fetch('/api/user',{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify({
+        username:username, 
+        phone:phone, 
+        email:email, 
+        password: password
+      })
+    }).then(res=>{
+      return res.json();
+    })
+},[])
   const handleClick = async (event) => {
     event.preventDefault();
-    useEffect(()=>{
-      fetch('/api/user',{
-        method:'POST',
-        headers:{
-          'Content-Type':'application/json'
-        },
-        body:JSON.stringify({})
-      })
-    })
 }
   return <>
     <h1 className={styles.mainHeading}>Bangulure International Airport Limited</h1>
