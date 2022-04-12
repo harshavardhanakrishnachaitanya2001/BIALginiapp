@@ -5,6 +5,7 @@ export default function SignUpSignIn(){
   const [phone,setPhone] = useState("");
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
+  let signupDetails = {};
   const handleUsername = (e) => {
     setUsername(e.target.value)
   }
@@ -17,34 +18,24 @@ export default function SignUpSignIn(){
   const handleEmail = (e) => {
     setEmail(e.target.value)
   }
-  // const handleClick = (e) => {
-  //   e.preventDefault();
-  //   const signupDetails = {
-  //     "username":username,
-  //     "phone":phone,
-  //     "email":email,
-  //     "password":password
-  //   }
-  // }
+  const handleClick = (e) => {
+    e.preventDefault();
+    signupDetails.username = username;
+    signupDetails.phone = phone;
+    signupDetails.email = email;
+    signupDetails.password = password;
+  }
   useEffect(()=>{
     fetch('/api/user',{
       method:'POST',
       headers:{
         'Content-Type':'application/json'
       },
-      body:JSON.stringify({
-        username:username, 
-        phone:phone, 
-        email:email, 
-        password: password
-      })
+      body:JSON.stringify(signupDetails)
     }).then(res=>{
       return res.json();
     })
 },[])
-  const handleClick = async (event) => {
-    event.preventDefault();
-}
   return <>
     <h1 className={styles.mainHeading}>Bangulure International Airport Limited</h1>
     <form className={styles.signupform}>
